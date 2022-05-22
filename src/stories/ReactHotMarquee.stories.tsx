@@ -8,6 +8,6 @@ export default {
     component: ReactHotMarquee,
 } as ComponentMeta<typeof ReactHotMarquee>;
 
-const Template: ComponentStory<typeof ReactHotMarquee> = (args) => <ReactHotMarquee {...args} />;
+const Template: ComponentStory<typeof ReactHotMarquee> = (args) => <ReactHotMarquee {...args} >自是人生长恨水常东自是人生长恨水常东自是人生长恨水常东自是人生长恨水常东</ReactHotMarquee>;
 
 export const Primary = Template.bind({});

@@ -1,0 +1,19 @@
+.wrap {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.marquee {
+  animation-name: scroll;
+  overflow: hidden;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
