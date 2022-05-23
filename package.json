@@ -30,6 +30,7 @@
     "@storybook/addon-essentials": "6.5.3",
     "@storybook/addon-interactions": "6.5.3",
     "@storybook/addon-links": "6.5.3",
+    "@storybook/addon-viewport": "^6.5.3",
     "@storybook/builder-webpack4": "6.5.3",
     "@storybook/manager-webpack4": "6.5.3",
     "@storybook/react": "6.5.3",
@@ -41,5 +42,7 @@
     "tslib": "^2.4.0",
     "typescript": "^4.6.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "classnames": "^2.3.1"
+  }
 }

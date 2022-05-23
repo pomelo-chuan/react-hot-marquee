@@ -1,19 +1,36 @@
 .wrap {
+  overflow-x: hidden !important;
+  display: flex !important;
+  flex-direction: row !important;
+  position: relative;
   width: 100%;
-  display: flex;
-  overflow: hidden;
+}
+
+.wrap:hover div {
+  animation-play-state: var(--pause-to-hover);
 }
 
 .marquee {
-  animation-name: scroll;
-  overflow: hidden;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  flex: 0 0 auto;
+  min-width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  animation-play-state: var(--play);
+  animation-iteration-count: var(--loop);
+  animation-delay: var(--delay);
+  animation-direction: var(--direction);
+  animation-duration: var(--duration);
 }
 
-@keyframes scroll {
-  0% {
+@keyframes marquee {
+  from {
     transform: translateX(0%);
   }
-  100% {
+  to {
     transform: translateX(-100%);
   }
 }
