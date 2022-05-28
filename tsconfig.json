@@ -3,7 +3,7 @@
     "jsx": "react",
     "target": "es5",
     "module": "commonjs",
-    "outDir": "lib",
+    "outDir": "dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -21,6 +21,6 @@
   "exclude": [
     "node_modules",
     "dist",
-    "src/stories"
+    "stories"
   ]
 }

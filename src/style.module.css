@@ -7,7 +7,7 @@
 }
 
 .wrap:hover div {
-  animation-play-state: var(--pause-to-hover);
+  animation-play-state: var(--hover-to-pause)!important;
 }
 
 .marquee {

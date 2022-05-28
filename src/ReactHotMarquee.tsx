@@ -1,31 +1,60 @@
-import React, { useEffect, useRef, useState } from "react";
-import classNames from "classnames";
-import "./style.css";
+import React, { useEffect, useRef, useState, useCallback } from "react";
+import styles from "./style.module.css";
 
 export interface IReactHotMarqueeProps {
+  /**
+   * The children of the ReactHotMarquee
+  */
   children: React.ReactNode;
-  style: React.CSSProperties;
+  /**
+   * The style of the ReactHotMarquee
+  */
+  style?: React.CSSProperties;
+  /**
+   * The className of the ReactHotMarquee
+  */
   className?: string;
-  direction?: "vertical" | "horizontal";
+  /**
+   * Reverse the marquee direction
+  */
   reverse?: boolean;
+  /**
+   * The running speed of the ReactHotMarquee
+  */
   speed?: number;
+  /**
+   * Specifies a delay for the start of marquee animation (s)
+  */
   delay?: number;
-  play?: boolean;
+  /**
+   * Whether to play or pause the ReactHotMarquee. If `play` is `overflow`, it will auto play when content width more than the container.
+  */
+  play?: boolean | 'overflow';
+  /**
+   * The numbers of loop count, 0 equal infinite
+  */
   loop?: number;
+  /**
+   * Whether to pause the marquee animation.
+  */
   hoverToPause?: boolean;
-  scrollWhen?: 'overflow',
+  /**
+   * The gutter between loop
+  */
+  gutter?: number;
 }
 
 function ReactHotMarquee(props: IReactHotMarqueeProps): JSX.Element {
   const {
+    style,
     children,
-    speed = 1,
-    reverse,
-    delay,
+    speed = 30,
+    reverse = false,
+    delay = 0,
     play = true,
-    loop,
-    hoverToPause,
-    direction,
+    loop = 0,
+    hoverToPause = false,
+    gutter = 20,
   } = props;
   const wrapRef = useRef<HTMLDivElement>(null);
   const marqueeRef = useRef<HTMLDivElement>(null);
@@ -48,6 +77,16 @@ function ReactHotMarquee(props: IReactHotMarqueeProps): JSX.Element {
     }
   };
 
+  const _play = useCallback(() => {
+    if (typeof play === 'boolean') {
+      return play
+    }
+    if (play === 'overflow' && (marqueeWidth! > wrapWidth)) {
+      return true
+    }
+    return false;
+  }, [wrapWidth, marqueeWidth]);
+
   useEffect(() => {
     computeWidth();
     window.addEventListener("resize", computeWidth);
@@ -57,34 +96,36 @@ function ReactHotMarquee(props: IReactHotMarqueeProps): JSX.Element {
     };
   }, [wrapWidth, speed]);
 
-  console.log("duration: ", `${duration}ms`);
-
-  console.log(wrapWidth - marqueeWidth)
-
   const marqueeProps = {
-    className: classNames("marquee"),
+    className: styles.marquee,
     style: {
       ["--duration" as string]: `${duration}s`,
       ["--direction" as string]: reverse ? "reverse" : "normal",
       ["--delay" as string]: `${delay}s`,
       ["--loop" as string]: loop ? loop : "infinite",
-      ["--play" as string]: play ? "running" : "paused",
+      ["--play" as string]: _play() ? "running" : "paused",
     },
   };
+
 
   return (
     <div
       ref={wrapRef}
-      className="wrap"
+      className={styles.wrap}
       style={{
-        ["--pause-to-hover" as string]: hoverToPause ? "paused" : "running",
+        ...style,
+        ["--hover-to-pause" as string]: hoverToPause ? "paused" : 'running',
       }}
     >
       <div ref={marqueeRef} {...marqueeProps}>
         {children}
+        <div style={{ width: gutter }} />
       </div>
-      <div {...marqueeProps}>{children}</div>
-    </div>
+      <div {...marqueeProps}>
+        {children}
+        <div style={{ width: gutter }} />
+      </div>
+    </div >
   );
 }
 
