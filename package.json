@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup --config",
     "sb": "start-storybook -p 6006",
-    "build:sb": "build-storybook"
+    "build:sb": "build-storybook -o docs"
   },
   "repository": {
     "type": "git",
