@@ -1,7 +1,7 @@
 {
   "name": "react-hot-marquee",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "The React marquee component that can smoothly loops the content",
   "main": "dist/index.js",
   "directories": {
     "dist": "dist"
@@ -16,7 +16,16 @@
     "type": "git",
     "url": "git+https://github.com/pomelo-chuan/react-hot-marquee.git"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "marquee",
+    "react-component",
+    "reactjs",
+    "ReactJs",
+    "carousel",
+    "slider",
+    "ticker"
+  ],
   "author": "pomelo-chuan",
   "license": "ISC",
   "bugs": {
@@ -30,14 +39,14 @@
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.2",
-    "@storybook/addon-actions": "6.5.3",
-    "@storybook/addon-essentials": "6.5.3",
-    "@storybook/addon-interactions": "6.5.3",
-    "@storybook/addon-links": "6.5.3",
-    "@storybook/addon-viewport": "^6.5.3",
-    "@storybook/builder-webpack4": "6.5.3",
-    "@storybook/manager-webpack4": "6.5.3",
-    "@storybook/react": "6.5.3",
+    "@storybook/addon-actions": "6.5.6",
+    "@storybook/addon-essentials": "6.5.6",
+    "@storybook/addon-interactions": "6.5.6",
+    "@storybook/addon-links": "6.5.6",
+    "@storybook/addon-viewport": "^6.5.6",
+    "@storybook/builder-webpack4": "6.5.6",
+    "@storybook/manager-webpack4": "6.5.6",
+    "@storybook/react": "6.5.6",
     "@storybook/testing-library": "0.0.11",
     "@types/react": "^18.0.9",
     "babel-loader": "^8.2.5",

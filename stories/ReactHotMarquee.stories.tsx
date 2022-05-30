@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { ReactHotMarquee } from '../dist/index';
+import ReactHotMarquee from '../dist/index';
 import '../dist/react-hot-marquee.css';
 
 storiesOf('ReactHotMarquee', module)

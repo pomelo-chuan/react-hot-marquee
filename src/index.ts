@@ -1,1 +1,5 @@
-export * from './ReactHotMarquee'
+import { ReactHotMarquee, IReactHotMarqueeProps } from "./ReactHotMarquee";
+
+export { IReactHotMarqueeProps };
+
+export default ReactHotMarquee;

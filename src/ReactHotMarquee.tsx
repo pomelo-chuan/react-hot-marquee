@@ -44,7 +44,7 @@ export interface IReactHotMarqueeProps {
   gutter?: number;
 }
 
-function ReactHotMarquee(props: IReactHotMarqueeProps): JSX.Element {
+const ReactHotMarquee: React.FC<IReactHotMarqueeProps> = (props) => {
   const {
     style,
     children,
@@ -106,7 +106,6 @@ function ReactHotMarquee(props: IReactHotMarqueeProps): JSX.Element {
       ["--play" as string]: _play() ? "running" : "paused",
     },
   };
-
 
   return (
     <div
