@@ -1,17 +1,16 @@
-.wrap {
+.react-hot-marquee-wrap {
   overflow-x: hidden !important;
   display: flex !important;
   flex-direction: row !important;
-  position: relative;
   width: 100%;
 }
 
-.wrap:hover div {
-  animation-play-state: var(--hover-to-pause)!important;
+.react-hot-marquee-wrap:hover div {
+  animation-play-state: var(--hover-to-pause);
 }
 
-.marquee {
-  animation-name: marquee;
+.react-hot-marquee-marquee {
+  animation-name: react-hot-marquee-marquee;
   animation-timing-function: linear;
   flex: 0 0 auto;
   min-width: 100%;
@@ -26,7 +25,7 @@
   animation-duration: var(--duration);
 }
 
-@keyframes marquee {
+@keyframes react-hot-marquee-marquee {
   from {
     transform: translateX(0%);
   }

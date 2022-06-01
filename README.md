@@ -46,4 +46,4 @@ function Demo() {
 
 # Documentation
 
-Explore the full [Documentation](https://pomelo-chuan.github.io/react-hot-marquee/?path=/story/doc--page)
+Explore the full [Documentation](https://pomelo-chuan.github.io/react-hot-marquee/iframe.html??args=&id=doc--page&viewMode=story&args=)

@@ -1,61 +1,125 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
 
-import { ReactHotMarquee } from "../dist/index";
+import ReactHotMarquee from "../dist/index";
+import "../dist/react-hot-marquee.css";
 
-<Meta title="doc" component={ReactHotMarquee} />
+<Meta title="doc" component={ReactHotMarquee} viewport="docs" />
 
 # ReactHotMarquee
 
-> The React marquee component that can smoothly loops the content.
+<ReactHotMarquee>
+  The React marquee component that can smoothly loops the content.
+</ReactHotMarquee>
+
+# Link
+
+View on [github](https://github.com/pomelo-chuan/react-hot-marquee)
+
+Explore the [demo](https://pomelo-chuan.github.io/react-hot-marquee/?path=/story/reacthotmarquee--simple).
 
 # Installation
 
-## With npm
+## Step 1
+
+Install **react-hot-marquee** via `npm` or `yarn`.
 
 ```bash
-$ npm install --save react-hot-marquee
+npm install --save react-hot-marquee
 ```
 
-## With yarn
+or
 
 ```bash
-$ yarn add react-hot-marquee
+yarn add react-hot-marquee
+```
+
+## Step 2
+
+Import css file into your project.
+
+```javascript
+import "react-hot-marquee/dist/react-hot-marquee.css";
 ```
 
 # Usage
 
 ## Simply usage
 
-```javascript
-import ReactHotMarquee from "react-hot-marquee";
+<Canvas>
+  <ReactHotMarquee>
+    Yesterday, All my trouble seemed so far away.
+  </ReactHotMarquee>
+</Canvas>
 
-function Demo() {
-  return (
-    <>
-      <ReactHotMarquee>
-        Yesterday, All my trouble seemed so far away.
-      </ReactHotMarquee>
-    </>
-  );
-}
-```
-
-## Running when overflow
+## Running when content `overflow`
 
 If `play` is `overflow`, it will auto play when content width more than the container.
 
-```javascript
-// won't running
-<ReactHotMarquee play="overflow">Yesterday</ReactHotMarquee>
+<Canvas>
+  {/* won't running */}
+  <ReactHotMarquee play="overflow">Yesterday</ReactHotMarquee>
+  {/* it will auto running */}
+  <ReactHotMarquee play="overflow">
+    Yesterday, All my trouble seemed so far away. Yesterday, All my trouble
+    seemed so far away. Yesterday, All my trouble seemed so far away. Yesterday,
+    All my trouble seemed so far away.
+  </ReactHotMarquee>
+</Canvas>
 
-// it will auto running
-<ReactHotMarquee play="overflow">
-  Yesterday, All my trouble seemed so far away.
-  Yesterday, All my trouble seemed so far away.
-  Yesterday, All my trouble seemed so far away.
-  Yesterday, All my trouble seemed so far away.
-</ReactHotMarquee>
-```
+## Different speed
+
+<Canvas>
+  <ReactHotMarquee speed={10}>
+    Yesterday, All my trouble seemed so far away.
+  </ReactHotMarquee>
+  <ReactHotMarquee speed={50}>
+    Yesterday, All my trouble seemed so far away.
+  </ReactHotMarquee>
+  <ReactHotMarquee speed={100}>
+    Yesterday, All my trouble seemed so far away.
+  </ReactHotMarquee>
+</Canvas>
+
+## Customer styles
+
+<Canvas>
+  <ReactHotMarquee
+    style={{
+      fontSize: "14px",
+      backgroundColor: "#f58442",
+      color: "#ffffff",
+      height: "50px",
+      width: "100%",
+    }}
+  >
+    Yesterday, All my trouble seemed so far away.
+  </ReactHotMarquee>
+</Canvas>
+
+## Marquee image
+
+<Canvas>
+  <ReactHotMarquee>
+    <img style={{ width: "60px" }} src={require("./asserts/icon2.png")} />
+    <img style={{ width: "60px" }} src={require("./asserts/icon3.png")} />
+    <img style={{ width: "60px" }} src={require("./asserts/icon4.png")} />
+    <img style={{ width: "60px" }} src={require("./asserts/icon5.png")} />
+    <img style={{ width: "60px" }} src={require("./asserts/icon6.png")} />
+    <img style={{ width: "60px" }} src={require("./asserts/icon7.png")} />
+    <img style={{ width: "60px" }} src={require("./asserts/icon2.png")} />
+    <img style={{ width: "60px" }} src={require("./asserts/icon3.png")} />
+    <img style={{ width: "60px" }} src={require("./asserts/icon4.png")} />
+    <img style={{ width: "60px" }} src={require("./asserts/icon5.png")} />
+    <img style={{ width: "60px" }} src={require("./asserts/icon6.png")} />
+    <img style={{ width: "60px" }} src={require("./asserts/icon7.png")} />
+    <img style={{ width: "60px" }} src={require("./asserts/icon2.png")} />
+    <img style={{ width: "60px" }} src={require("./asserts/icon3.png")} />
+    <img style={{ width: "60px" }} src={require("./asserts/icon4.png")} />
+    <img style={{ width: "60px" }} src={require("./asserts/icon5.png")} />
+    <img style={{ width: "60px" }} src={require("./asserts/icon6.png")} />
+    <img style={{ width: "60px" }} src={require("./asserts/icon7.png")} />
+  </ReactHotMarquee>
+</Canvas>
 
 # Props
 

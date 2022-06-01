@@ -12,12 +12,12 @@ storiesOf('ReactHotMarquee', module)
     return (
       <>
         <ReactHotMarquee play="overflow">Yesterday</ReactHotMarquee>
-        <ReactHotMarquee play="overflow">
+        {/* <ReactHotMarquee play="overflow">
           Yesterday, All my trouble seemed so far away.
           Yesterday, All my trouble seemed so far away.
           Yesterday, All my trouble seemed so far away.
           Yesterday, All my trouble seemed so far away.
-        </ReactHotMarquee>
+        </ReactHotMarquee> */}
       </>
     )
   })
