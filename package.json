@@ -1,6 +1,6 @@
 {
   "name": "react-hot-marquee",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "The React marquee component that can smoothly loops the content",
   "main": "dist/index.js",
   "directories": {
