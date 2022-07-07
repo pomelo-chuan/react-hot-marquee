@@ -7,9 +7,27 @@ import "../dist/react-hot-marquee.css";
 
 # ReactHotMarquee
 
-<ReactHotMarquee>
-  The React marquee component that can smoothly loops the content.
-</ReactHotMarquee>
+<div style={{ backgroundColor: "#53AEFE" }}>
+  <ReactHotMarquee>
+    <div
+      style={{
+        height: "120px",
+        lineHeight: "120px",
+        color: "#ffffff",
+        fontSize: "60px",
+        letterSpace: "5px",
+      }}
+    >
+      The React marquee component that can smoothly loops the content.
+    </div>
+  </ReactHotMarquee>
+</div>
+
+# Features
+
+- 🎈 Easy to use.
+- 🧩 Headless Marquee components, you can assign your custom style.
+- ▶️ Auto play when content `overflow`.
 
 # Link
 
@@ -25,12 +43,6 @@ Install **react-hot-marquee** via `npm` or `yarn`.
 
 ```bash
 npm install --save react-hot-marquee
-```
-
-or
-
-```bash
-yarn add react-hot-marquee
 ```
 
 ## Step 2
@@ -123,15 +135,16 @@ If `play` is `overflow`, it will auto play when content width more than the cont
 
 # Props
 
-| Name         | Description                                             | Type                  | Default |
-| ------------ | ------------------------------------------------------- | --------------------- | ------- |
-| children     | The children of the ReactHotMarquee                     | React.ReactNode       | -       |
-| style        | The style of the ReactHotMarquee                        | React.CSSProperties   | -       |
-| className    | The className of the ReactHotMarquee                    | string                | -       |
-| reverse      | Reverse the marquee direction                           | boolean               | false   |
-| speed        | The running speed of the ReactHotMarquee                | number                | 30      |
-| delay        | Specifies a delay for the start of marquee animation(s) | number                | 0       |
-| play         | Whether to play or pause the ReactHotMarquee.           | boolean \| 'overflow' | true    |
-| loop         | The numbers of loop count, 0 equal infinite             | number                | 0       |
-| hoverToPause | Whether to pause the marquee animation                  | boolean               | false   |
-| gutter       | The gutter between loop                                 | number                | 20      |
+| Name            | Description                                             | Type                  | Default |
+| --------------- | ------------------------------------------------------- | --------------------- | ------- |
+| children        | The children of the ReactHotMarquee                     | React.ReactNode       | -       |
+| style           | The style of the ReactHotMarquee                        | React.CSSProperties   | -       |
+| className       | The className of the ReactHotMarquee                    | string                | -       |
+| reverse         | Reverse the marquee direction                           | boolean               | false   |
+| speed           | The running speed of the ReactHotMarquee                | number                | 30      |
+| delay           | Specifies a delay for the start of marquee animation(s) | number                | 0       |
+| play            | Whether to play or pause the ReactHotMarquee.           | boolean \| 'overflow' | true    |
+| loop            | The numbers of loop count, 0 equal infinite             | number                | 0       |
+| hoverToPause    | Whether to pause the marquee animation                  | boolean               | false   |
+| gutter          | The gutter between loop                                 | number                | 20      |
+| classNamePrefix | The className prefix                                    | string                | -       |

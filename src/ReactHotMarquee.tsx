@@ -91,13 +91,13 @@ const ReactHotMarquee: React.FC<IReactHotMarqueeProps> = (props) => {
       result = play
     }
     if (play === 'overflow') {
-      if (marqueeWidth < wrapWidth) {
+      if (marqueeWidth > wrapWidth) {
         result = true;
       } else {
         result = false;
       }
     }
-    return result ? 'running' : 'pause';
+    return result ? 'running' : 'paused';
   }, [wrapWidth, marqueeWidth]);
 
   useEffect(() => {
@@ -122,6 +122,8 @@ const ReactHotMarquee: React.FC<IReactHotMarqueeProps> = (props) => {
       ["--play" as string]: _play(),
     },
   };
+
+  console.log(_play());
 
   return (
     <div
